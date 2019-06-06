@@ -11,6 +11,8 @@ module Rulers
       controller = klass.new(env)
       text = controller.send(act)
       [200, {'Content-Type' => 'text/html'},[text]]
+    rescue
+      [500, {'Content-Type' => 'text/html'},['It hurt right in the heart!']]
     end
   end
 
